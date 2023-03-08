@@ -35,55 +35,55 @@ def Main():
     computer = random.choice(R_P_S)
     player = input("Your choice: ")
     TEXT = f"I choose {computer}, you choose, {player}."
-    return Game(computer, player, TEXT)
+    Game(computer, player, TEXT)
 
 
 def Game(computer, player, TEXT):
     if player == "Scissors":
         if computer == "Paper":
             print(f"{TEXT} {WIN}")
-            return Try_again(1)
+            Try_again(1)
         if computer == "Rock":
             print(f"{TEXT} {LOSE}")
-            return Try_again(0)
+            Try_again(0)
         if computer == "Scissors":
             print(f"{TEXT} {TIE}")
-            return Try_again(2)
+            Try_again(2)
 
     elif player == "Rock":
         if computer == "Scissors":
             print(f"{TEXT} {WIN}")
-            return Try_again(1)
+            Try_again(1)
         if computer == "Paper":
             print(f"{TEXT} {LOSE}")
-            return Try_again(0)
+            Try_again(0)
         if computer == "Rock":
             print(f"{TEXT} {TIE}")
-            return Try_again(2)
+            Try_again(2)
 
     elif player == "Paper":
         if computer == "Rock":
             print(f"{TEXT} {WIN}")
-            return Try_again(1)
+            Try_again(1)
         if computer == "Scissors":
             print(f"{TEXT} {LOSE}")
-            return Try_again(0)
+            Try_again(0)
         if computer == "Paper":
             print(f"{TEXT} {TIE}")
-            return Try_again(2)
+            Try_again(2)
 
     else:
         print(f"{color.RED}\nInvalid input\n{color.END}")
-        return Main()
+        Main()
 
 
 def Try_again(result):
     if result == 1:
-        print("\n\nCongratulations. You won!")
+        print(f"\n\nCongratulations. {color.LIGHT_GREEN}You won!{color.END}")
     elif result == 0:
-        pass  # You can add something for losing the game here # ! Remove "pass".
+        print(f"\n\nOh no. {color.RED} You lost! {color.END}")
     elif result == 2:
-        pass  # You can add something for tie up the game here # ! Remove "pass".
+        print(f"Wow. {color.YELLOW} It is tied up! {color.END}")
 
     play_again = input("Do you want to try again, yes or no? : ")
 
